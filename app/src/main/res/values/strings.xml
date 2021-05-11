@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Nike Sample App</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="web_page_to_scrape">Enter the Web URL of the page you want to scrape images from:</string>
+    <string name="enter_web_url_hint">Enter a valid Web Url (ie: https://www.nike.com)</string>
+    <string name="scrape_it">Scrape it!</string>
+</resources>
