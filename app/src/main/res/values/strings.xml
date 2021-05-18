@@ -11,6 +11,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <string name="web_page_to_scrape">Enter the Web URL of the page you want to scrape images from:</string>
-    <string name="enter_web_url_hint">Enter a valid Web Url (ie: https://www.nike.com)</string>
+    <string name="enter_web_url_hint">Enter website to Scrape</string>
     <string name="scrape_it">Scrape it!</string>
+    <string name="https">https://</string>
 </resources>

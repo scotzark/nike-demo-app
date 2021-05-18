@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,22 +10,57 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="@string/web_page_to_scrape"/>
+        android:text="@string/web_page_to_scrape" />
 
-    <EditText
-        android:id="@+id/url"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:layout_margin="16dp"
-        android:hint="@string/enter_web_url_hint"/>
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/teal_700"
+            android:text="@string/https" />
+
+        <EditText
+            android:id="@+id/url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:singleLine="true"
+            android:hint="@string/enter_web_url_hint" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/scrapeIt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/scrape_it"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/red"
+        tools:text="Error Code Lives here" />
+
+    <ProgressBar
+        android:id="@+id/spinner"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        tools:visibility="visible"/>
 
     <com.scoti.nikesampleapp.views.EndlessRecyclerView
         android:id="@+id/endlessRecycler"
@@ -34,5 +68,5 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:paddingStart="16dp"
-        android:paddingEnd="16dp"/>
+        android:paddingEnd="16dp" />
 </LinearLayout>

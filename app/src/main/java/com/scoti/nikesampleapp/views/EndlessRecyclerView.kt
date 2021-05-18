@@ -80,7 +80,7 @@ class EndlessRecyclerView : LinearLayout {
         override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
             super.onScrolled(recyclerView, dx, dy)
             val firstItemVisible: Int = (recyclerView.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
-            if (firstItemVisible != 0 && (firstItemVisible % (recyclerView.adapter as EndlessRecyclerAdapter).numberOfItems) == 0) {
+            if (((recyclerView.adapter as EndlessRecyclerAdapter).numberOfItems != 0) && firstItemVisible != 0 && (firstItemVisible % (recyclerView.adapter as EndlessRecyclerAdapter).numberOfItems) == 0) {
                 recyclerView.layoutManager?.scrollToPosition(0)
             }
         }

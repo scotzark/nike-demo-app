@@ -10,3 +10,7 @@ fun View?.hideKeyboard() {
         imm.hideSoftInputFromWindow(this.windowToken, 0)
     }
 }
+
+inline var View?.visible
+    get() = (this?.visibility ?: View.GONE) == View.VISIBLE
+    set(value) { this?.visibility = if (value) View.VISIBLE else View.GONE }
