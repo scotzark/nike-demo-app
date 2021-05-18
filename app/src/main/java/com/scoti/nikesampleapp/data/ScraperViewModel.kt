@@ -31,14 +31,13 @@ class ScraperViewModel : ViewModel() {
                     val element = it
                     val absoluteUrl = element.absUrl("src")
 
-                    //absolute URL on src
-                    if (!absoluteUrl.contains(".svg") && absoluteUrl.isNotEmpty())
+                    //absolute URL on if (!absoluteUrl.contains(".svg") && absoluteUrl.isNotEmpty())
                         images.add(Image(absoluteUrl))
 
                 }
 
                 if (images.isEmpty()) {
-                    errorMessage.postValue(AppErrors.NO_IMAGES.prettyName)
+                    errorMessage.postValue(String.format(AppErrors.NO_IMAGES.prettyName, url))
                 }
                 else {
                     scrapedImages.postValue(images)

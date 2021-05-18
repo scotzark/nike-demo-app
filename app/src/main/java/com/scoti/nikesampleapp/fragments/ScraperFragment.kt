@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ProgressBar
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.scoti.nikesampleapp.models.Image
@@ -50,13 +47,18 @@ class ScraperFragment : Fragment() {
             if (url.isNotEmpty()) {
                 scrapePage(url)
             }
+            else {
+                Toast.makeText(requireContext(), "URL is empty, please enter a valid URL", Toast.LENGTH_LONG).show()
+            }
         }
     }
 
     private fun scrapePage(url: String) {
-        viewModel.scrapePage("https://${url}")
+        requireView().findViewById<EndlessRecyclerView>(R.id.endlessRecycler).visible = false
         requireView().hideKeyboard()
         showSpinner(true)
+
+        viewModel.scrapePage("https://${url}")
     }
 
     private fun loadImages(images: List<Image>) {
