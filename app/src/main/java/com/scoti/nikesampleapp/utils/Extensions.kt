@@ -14,3 +14,8 @@ fun View?.hideKeyboard() {
 inline var View?.visible
     get() = (this?.visibility ?: View.GONE) == View.VISIBLE
     set(value) { this?.visibility = if (value) View.VISIBLE else View.GONE }
+
+
+fun String.isValidImage(): Boolean {
+    return this.contains(".jpg") || this.contains(".png")
+}

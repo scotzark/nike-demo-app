@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.scoti.nikesampleapp.models.AppErrors
 import com.scoti.nikesampleapp.models.Image
+import com.scoti.nikesampleapp.utils.isValidImage
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -31,7 +32,7 @@ class ScraperViewModel : ViewModel() {
                     val element = it
                     val absoluteUrl = element.absUrl("src")
 
-                    //absolute URL on if (!absoluteUrl.contains(".svg") && absoluteUrl.isNotEmpty())
+                    if (absoluteUrl.isValidImage())
                         images.add(Image(absoluteUrl))
 
                 }
